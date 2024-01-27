@@ -25,3 +25,8 @@ mesh = SubResource("QuadMesh_q0jsc")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 13.547
+
+[connection signal="timeout" from="Timer" to="." method="_OnTimerTimeout"]
