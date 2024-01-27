@@ -11,6 +11,7 @@
 transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("2_qfwsh")
+texture_repeat = false
 billboard_mode = 1
 billboard_keep_scale = true
 
