@@ -16,7 +16,7 @@ public partial class mainMenu : Control
 
 private void _StartGame()
 {
-	get_tree().change_scene();
+	get_tree().change_scene("res://room.tscn");
 }
 
 private void _ApplicationQuit()
