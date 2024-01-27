@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=6 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
 [ext_resource type="Material" uid="uid://cmvgqjma38hti" path="res://WallMat.tres" id="2_ck6f3"]
 [ext_resource type="Material" uid="uid://dx6l8yif0h73" path="res://pillarMat.tres" id="3_kgftq"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="4_njkal"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hy6t8"]
 
@@ -19,7 +20,6 @@ material = ExtResource("1_hwmi1")
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, 3, 0)
-visible = false
 material = ExtResource("1_hwmi1")
 
 [node name="Window1" type="CSGBox3D" parent="."]
@@ -135,3 +135,6 @@ material = ExtResource("3_kgftq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18, 10, 3, 0)
 use_collision = true
 material = ExtResource("3_kgftq")
+
+[node name="Player" parent="." instance=ExtResource("4_njkal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

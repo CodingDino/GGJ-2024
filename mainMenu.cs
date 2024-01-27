@@ -12,14 +12,15 @@ public partial class mainMenu : Control
 	public override void _Process(double delta)
 	{
 	}
-}
-
-private void _StartGame()
+	
+	private void _StartGame()
 {
-	get_tree().change_scene("res://room.tscn");
+	GetTree().ChangeSceneToFile("res://room.tscn");
 }
 
 private void _ApplicationQuit()
 {
-	get_tree().quit(); 
+	GetTree().Quit(); 
 }
+}
+
