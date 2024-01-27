@@ -1,20 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50ygvxkqa4ob"]
+[gd_scene load_steps=6 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
+[ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_t6p1v"]
+[sub_resource type="QuadMesh" id="QuadMesh_2k4pa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7kmd"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_qfwsh")
+billboard_mode = 1
+billboard_keep_scale = true
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gr5sa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_youko")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0.294387, 0, -0.764697)
-mesh = SubResource("CapsuleMesh_t6p1v")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.25, -0.5)
+mesh = SubResource("QuadMesh_2k4pa")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c7kmd")
