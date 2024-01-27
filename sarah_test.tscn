@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c874dv4iixblt"]
+
+[ext_resource type="PackedScene" uid="uid://c50ygvxkqa4ob" path="res://player.tscn" id="1_nkxx1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qiwjn"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6kdis"]
+sky_material = SubResource("ProceduralSkyMaterial_qiwjn")
+
+[sub_resource type="Environment" id="Environment_jgof6"]
+background_mode = 2
+sky = SubResource("Sky_6kdis")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jgof6")
+
+[node name="Player" parent="." instance=ExtResource("1_nkxx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473789, 1.36665, -0.680895)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22322, -0.481573, -2.49776)
+use_collision = true
+size = Vector3(5.73389, 1, 7.7334)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 81.0
+offset_bottom = 49.0
