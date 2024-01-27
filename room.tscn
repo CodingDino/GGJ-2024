@@ -21,22 +21,22 @@ material = ExtResource("1_hwmi1")
 transform = Transform3D(10, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 3, 0)
 material = ExtResource("1_hwmi1")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="Window1" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 8, 5, 1.5, 0)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="Window2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 8, -5, 1.5, 0)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="Window3" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, 5)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="Window4" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, -5)
 use_collision = true
 material = ExtResource("2_ck6f3")
