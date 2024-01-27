@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=5 format=3 uid="uid://bigdqlle5vppp"]
+
+[ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
+[ext_resource type="Material" uid="uid://cmvgqjma38hti" path="res://WallMat.tres" id="2_ck6f3"]
+[ext_resource type="Material" uid="uid://dx6l8yif0h73" path="res://pillarMat.tres" id="3_kgftq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hy6t8"]
 
@@ -11,35 +15,42 @@ mesh = SubResource("PlaneMesh_hy6t8")
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 0.5, 0, 0, 0, 8, 0, 0, 0)
 use_collision = true
+material = ExtResource("1_hwmi1")
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 0.5, 0, 0, 0, 8, 0, 2, 0)
-visible = false
+material = ExtResource("1_hwmi1")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 8, 4, 1, 0)
 use_collision = true
+material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 8, -4, 1, 0)
 use_collision = true
+material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 1, 4)
 use_collision = true
+material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 1, -4)
 use_collision = true
+material = ExtResource("2_ck6f3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.761889, 0, 0.647708, 0, 1, 0, -0.647708, 0, 0.761889, 4.28963, 1.23078, 4.66492)
+light_color = Color(1, 0.564706, 0.388235, 1)
 light_energy = 0.5
 light_indirect_energy = 0.5
 light_angular_distance = 1.0
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.780147, 0, -0.625597, 0, 1, 0, 0.625597, 0, -0.780147, -4.29, 1.231, -4.665)
+light_color = Color(1, 0.564706, 0.388235, 1)
 light_energy = 0.5
 light_indirect_energy = 0.5
 light_angular_distance = 1.0
@@ -47,15 +58,19 @@ light_angular_distance = 1.0
 [node name="pillar" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 0.25, 2, 1, 0)
 use_collision = true
+material = ExtResource("3_kgftq")
 
 [node name="pillar2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 0.25, -2, 1, 0)
 use_collision = true
+material = ExtResource("3_kgftq")
 
 [node name="pillar3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1, 2)
 use_collision = true
+material = ExtResource("3_kgftq")
 
 [node name="pillar4" type="CSGBox3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1, -2)
 use_collision = true
+material = ExtResource("3_kgftq")
