@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
-[ext_resource type="PackedScene" uid="uid://c24isqjs1c4g2" path="res://enemy.tscn" id="1_on4ew"]
+[ext_resource type="PackedScene" uid="uid://1fje7miot30g" path="res://enemy.tscn" id="1_on4ew"]
 [ext_resource type="Material" uid="uid://cmvgqjma38hti" path="res://WallMat.tres" id="2_ck6f3"]
 [ext_resource type="Material" uid="uid://dx6l8yif0h73" path="res://pillarMat.tres" id="3_kgftq"]
-[ext_resource type="PackedScene" uid="uid://ddbc31dejtmea" path="res://player.tscn" id="4_njkal"]
+[ext_resource type="PackedScene" uid="uid://c50ygvxkqa4ob" path="res://player.tscn" id="4_njkal"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hy6t8"]
 
@@ -158,3 +158,29 @@ use_collision = true
 material = ExtResource("2_ck6f3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -308.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 152.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 70
+text = "9999999"
+
+[node name="Score Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -534.0
+offset_top = 15.0
+offset_right = -317.0
+offset_bottom = 152.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 70
+text = "Score:"
