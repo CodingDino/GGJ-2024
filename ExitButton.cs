@@ -15,7 +15,8 @@ public partial class ExitButton : Button
 	
 	private void _on_pressed()
 {
-	GetTree().Quit(); 
+	//GetTree().Quit(); 
+	GetTree().ChangeSceneToFile("res://mainMenu.tscn");
 }
 }
 
