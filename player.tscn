@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddbc31dejtmea"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
-[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_3tfrr"]
+[ext_resource type="PackedScene" uid="uid://qod3npa6uwjg" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
