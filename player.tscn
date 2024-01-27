@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddbc31dejtmea"]
+[gd_scene load_steps=7 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
+[ext_resource type="PackedScene" uid="uid://d54tpeswf7fk" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
@@ -17,6 +18,7 @@ billboard_keep_scale = true
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gr5sa")
+bullet_scene = ExtResource("2_3tfrr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -25,8 +27,11 @@ shape = SubResource("CapsuleShape3D_youko")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+[node name="GunBillboard" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.25, -0.5)
 mesh = SubResource("QuadMesh_2k4pa")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_c7kmd")
+
+[node name="BulletSpawnPoint" type="Node3D" parent="Camera3D/GunBillboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
