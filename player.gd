@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var jump_speed = 4.5
 @export var mouse_sensitivity = 0.002
 @export var bullet_scene: PackedScene
+@export var bullet_speed= 10.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -24,7 +25,7 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			get_viewport().set_input_as_handled()
 	if event.is_action_pressed("shoot"):
-		pass
+		shoot()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -49,4 +50,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func shoot() :
-	pass
+	var bullet = bullet_scene.instantiate()
+	# We store the reference to the SpawnLocation node.
+	var bullet_spawn_location = $Camera3D/GunBillboard/BulletSpawnPoint
+	bullet.global_position = bullet_spawn_location.global_position
+	var aim = $Camera3D.get_global_transform().basis
+	var forward = -aim.z
+	bullet.linear_velocity = forward * bullet_speed
+	get_tree().current_scene.add_child(bullet)
