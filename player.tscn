@@ -34,4 +34,4 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_c7kmd")
 
 [node name="BulletSpawn" type="Node3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
