@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcyg66a8ktwfx"]
+
+[ext_resource type="Texture2D" uid="uid://w4ob1d3mobhs" path="res://Hoohoon.png" id="1_qyrmx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeaqd"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_qyrmx")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_bllyt"]
+material = SubResource("StandardMaterial3D_yeaqd")
+
+[node name="Chucklenug" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_bllyt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

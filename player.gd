@@ -52,9 +52,27 @@ func _physics_process(delta):
 func shoot() :
 	var bullet = bullet_scene.instantiate()
 	# We store the reference to the SpawnLocation node.
-	var bullet_spawn_location = $Camera3D/GunBillboard/BulletSpawnPoint
+	var bullet_spawn_location = $Camera3D/GunBillboard/BulletSpawn
 	bullet.global_position = bullet_spawn_location.global_position
 	var aim = $Camera3D.get_global_transform().basis
 	var forward = -aim.z
-	bullet.linear_velocity = forward * bullet_speed
+	
+	# check ray cast point
+	
+	#var space_state = get_world_3d().direct_space_state
+	#var cam = $Camera3D
+	#var mousepos = get_viewport().get_mouse_position()
+	#var origin = cam.project_ray_origin(mousepos)
+	#var end = origin + cam.project_ray_normal(mousepos) * 1000
+	#var query = PhysicsRayQueryParameters3D.create(cam.global_position, end)
+	#query.collide_with_areas = true
+
+	#var result = space_state.intersect_ray(query)
+
+	var bullet_dir = forward
+	#if result :
+	#	bullet_dir = result.position - bullet.global_position
+	#	bullet_dir = bullet_dir.normalized()
+	
+	bullet.linear_velocity = bullet_dir * bullet_speed
 	get_tree().current_scene.add_child(bullet)
