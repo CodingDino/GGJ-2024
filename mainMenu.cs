@@ -14,13 +14,13 @@ public partial class mainMenu : Control
 	}
 	
 	private void _StartGame()
-{
-	GetTree().ChangeSceneToFile("res://room.tscn");
-}
-
-private void _ApplicationQuit()
-{
-	GetTree().Quit(); 
-}
+	{
+		GetTree().ChangeSceneToFile("res://room.tscn");
+	}
+	
+	private void _ApplicationQuit()
+	{
+		GetTree().Quit(); 
+	}
 }
 
