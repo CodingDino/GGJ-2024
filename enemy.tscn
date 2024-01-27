@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Enemy.cs" id="1_8gtg3"]
 [ext_resource type="Texture2D" uid="uid://w4ob1d3mobhs" path="res://Hoohoon.png" id="2_o5slo"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mdk6v"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_6ff27"]
+radius = 0.532947
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsaif"]
 transparency = 1
@@ -13,11 +14,11 @@ albedo_texture = ExtResource("2_o5slo")
 material = SubResource("StandardMaterial3D_hsaif")
 
 [node name="Enemy" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423072, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.423072, 0)
 script = ExtResource("1_8gtg3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_mdk6v")
+shape = SubResource("SphereShape3D_6ff27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

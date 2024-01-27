@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=9 format=3 uid="uid://bigdqlle5vppp"]
 
+[ext_resource type="Script" path="res://GameManager.gd" id="1_01nm6"]
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
 [ext_resource type="PackedScene" uid="uid://c24isqjs1c4g2" path="res://enemy.tscn" id="1_on4ew"]
 [ext_resource type="Material" uid="uid://cmvgqjma38hti" path="res://WallMat.tres" id="2_ck6f3"]
@@ -15,6 +16,7 @@ agent_height = 1.0
 agent_radius = 0.25
 
 [node name="Room" type="Node3D"]
+script = ExtResource("1_01nm6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -2.19548, 0)
@@ -35,7 +37,7 @@ light_indirect_energy = 0.5
 light_angular_distance = 1.0
 
 [node name="Enemy" parent="." instance=ExtResource("1_on4ew")]
-transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 2.77064, 0.88428, -2.73333)
+transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 2.77064, 1.93199, -2.73333)
 playerPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_njkal")]
@@ -157,4 +159,30 @@ transform = Transform3D(18, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, -10)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
+[node name="SpawnerParent" type="Node3D" parent="RoomGeometry"]
+
+[node name="Spawner" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.26, 0)
+
+[node name="Spawner2" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 0)
+
+[node name="Spawner3" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436, -6)
+
+[node name="Spawner4" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366, 6)
+
+[node name="Spawner5" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.25, -8)
+
+[node name="Spawner6" type="Node3D" parent="RoomGeometry/SpawnerParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, 8)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
