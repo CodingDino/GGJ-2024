@@ -13,32 +13,31 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hy6t8")
 
 [node name="floor" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
 use_collision = true
 material = ExtResource("1_hwmi1")
 
 [node name="roof" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 3, 0)
-visible = false
+transform = Transform3D(10, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 3, 0)
 material = ExtResource("1_hwmi1")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 10, 5, 1.5, 0)
+transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 8, 5, 1.5, 0)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 10, -5, 1.5, 0)
+transform = Transform3D(0.25, 0, 0, 0, 2, 0, 0, 0, 8, -5, 1.5, 0)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 1.5, 5)
+transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, 5)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 1.5, -5)
+transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, -5)
 use_collision = true
 material = ExtResource("2_ck6f3")
 
@@ -73,5 +72,65 @@ material = ExtResource("3_kgftq")
 
 [node name="pillar4" type="CSGBox3D" parent="."]
 transform = Transform3D(0.375, 0, 0, 0, 3, 0, 0, 0, 0.375, 0, 1.5, -2.5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPillar" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 5, 1.5, 5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPillar2" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -5, 1.5, 5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPillar3" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 5, 1.5, -5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPillar4" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -5, 1.5, -5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPart" type="CSGBox3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPart2" type="CSGBox3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPart3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 5, 0, 0)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPart4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, -5, 0, 0)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPartUpper" type="CSGBox3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPartUpper2" type="CSGBox3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPartUpper3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, -5, 3, 0)
+use_collision = true
+material = ExtResource("3_kgftq")
+
+[node name="wallPartUpper4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 5, 3, 0)
 use_collision = true
 material = ExtResource("3_kgftq")
