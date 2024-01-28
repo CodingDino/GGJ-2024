@@ -11,6 +11,7 @@ extends CharacterBody3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var walking = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -45,9 +46,15 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		if not walking:
+			walking = true
+			# start footsteps
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		if walking:
+			walking = false
+			#stop footsteps
 	
 	move_and_slide()
 
