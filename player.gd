@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var shoot_cooldown= 5.0
 
 @onready var gunAnim = $Camera3D/GunBillboard/AnimationPlayer
+@onready var fireParticles = $Camera3D/GunBillboard/GPUParticles3D
 var timeSinceShot = 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -72,4 +73,5 @@ func shoot() :
 	
 	# Animate gun
 	gunAnim.play("Fire")
+	fireParticles.emitting = true
 	timeSinceShot = 0
