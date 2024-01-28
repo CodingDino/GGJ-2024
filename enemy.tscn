@@ -64,7 +64,8 @@ show_percentage = false
 script = SubResource("GDScript_vkdjr")
 
 [node name="GiggleDamage" parent="." instance=ExtResource("3_2kmpa")]
-autoDamage = false
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+damageFreq = 3.0
 
 [node name="LaughDamage" parent="." instance=ExtResource("3_2kmpa")]
 damage = 10

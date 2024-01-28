@@ -130,6 +130,7 @@ health = 100
 death_anim_name = ""
 death_anim_node = ""
 remove_on_death = ""
+health_bar_node = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

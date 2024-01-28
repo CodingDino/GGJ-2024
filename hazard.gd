@@ -30,6 +30,7 @@ func _on_body_entered(body):
 	if body.is_in_group(targetGroup) and body.get_node_or_null("Health") :
 		collidingWith.append(body.get_node("Health"))
 		lastDamaged.append(0)
+		print(body.name)
 
 
 func _on_body_exited(body):
