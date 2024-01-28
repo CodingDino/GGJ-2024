@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://deu544fia0cwt"]
+[gd_scene load_steps=3 format=3 uid="uid://deu544fia0cwt"]
 
 [ext_resource type="Script" path="res://mainMenu.cs" id="1_4ww0e"]
+
+[sub_resource type="EventAsset" id="EventAsset_mjweg"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicLoop"
+guid = "{521e109d-7a1a-4487-a580-d520009fb7e9}"
+name = "MusicLoop"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -48,6 +55,12 @@ text = "Start"
 [node name="ExitBtn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
+play_event = 2
+event = SubResource("EventAsset_mjweg")
+
+[node name="StudioListener2D" type="StudioListener2D" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_StartGame"]
 [connection signal="pressed" from="VBoxContainer/ExitBtn" to="." method="_ApplicationQuit"]

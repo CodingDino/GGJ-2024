@@ -1,16 +1,19 @@
 extends CharacterBody3D
 
 
+
 @export var speed = 5.0
 @export var jump_speed = 4.5
 @export var mouse_sensitivity = 0.002
 @export var bullet_scene: PackedScene
 @export var bullet_speed= 10.0
 @export var shoot_cooldown= 5.0
-
+@export var event: EventAsset'
+'
 @onready var gunAnim = $Camera3D/GunBillboard/AnimationPlayer
 @onready var fireParticles = $Camera3D/GunBillboard/GPUParticles3D
 var timeSinceShot = 0.0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -75,3 +78,5 @@ func shoot() :
 	gunAnim.play("Fire")
 	fireParticles.emitting = true
 	timeSinceShot = 0
+	# add FMOD gun sound
+	FMODRuntime.play_one_shot_attached(event, self)

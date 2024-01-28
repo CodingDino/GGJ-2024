@@ -1,0 +1,10 @@
+[gd_resource type="EventAsset" format=3 uid="uid://ckrl2blcgx7h1"]
+
+[resource]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/ChucklenugIdle"
+guid = "{85b7d20f-20e2-45b8-8a54-06f6843cd7f1}"
+name = "ChucklenugIdle"

@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://cg7tawakcv8se"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Gunshot"
+guid = "{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}"
+name = "Gunshot"
