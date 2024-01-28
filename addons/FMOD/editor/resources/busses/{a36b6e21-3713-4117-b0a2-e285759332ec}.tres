@@ -1,6 +1,6 @@
 [gd_resource type="BusAsset" format=3 uid="uid://cqf5ja4aslajf"]
 
 [resource]
-path = "bus:/Weapon"
+path = "bus:/MusicDucker/Weapon"
 guid = "{a36b6e21-3713-4117-b0a2-e285759332ec}"
 name = "Weapon"

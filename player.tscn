@@ -5,9 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 [ext_resource type="EventAsset" uid="uid://cg7tawakcv8se" path="res://addons/FMOD/editor/resources/events/{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}.tres" id="3_4yoav"]
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
-[ext_resource type="EventAsset" uid="uid://dhcywi15inmdp" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="4_aj6t7"]
 [ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="4_lghpf"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
+
+[sub_resource type="EventAsset" id="EventAsset_rk6xf"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Footsteps"
+guid = "{2da4c61c-1b98-4f42-8920-4e6f467fa795}"
+name = "Footsteps"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
@@ -126,7 +132,7 @@ script = ExtResource("1_gr5sa")
 bullet_scene = ExtResource("2_3tfrr")
 shoot_cooldown = 1.0
 gunSound = ExtResource("3_4yoav")
-footsteps = ExtResource("4_aj6t7")
+footsteps = SubResource("EventAsset_rk6xf")
 
 [node name="Health" parent="." groups=["Player"] instance=ExtResource("3_63gab")]
 health = 100

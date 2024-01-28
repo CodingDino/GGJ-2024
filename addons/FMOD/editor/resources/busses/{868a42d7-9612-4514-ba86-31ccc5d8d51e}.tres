@@ -1,0 +1,6 @@
+[gd_resource type="BusAsset" format=3 uid="uid://btj7frpk8lem4"]
+
+[resource]
+path = "bus:/MusicDucker"
+guid = "{868a42d7-9612-4514-ba86-31ccc5d8d51e}"
+name = "MusicDucker"
