@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=15 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
 [ext_resource type="PackedScene" uid="uid://1fje7miot30g" path="res://enemy.tscn" id="1_on4ew"]
@@ -7,6 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://c50ygvxkqa4ob" path="res://player.tscn" id="4_njkal"]
 [ext_resource type="Script" path="res://Score.gd" id="6_km5e4"]
 [ext_resource type="Script" path="res://HealthBar.gd" id="7_brvu6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hylcm"]
+sky_top_color = Color(0, 0.47451, 0.729412, 1)
+sky_horizon_color = Color(0.5, 0.737255, 0.864706, 1)
+ground_bottom_color = Color(0, 0.47451, 0.729412, 1)
+ground_horizon_color = Color(0.5, 0.737255, 0.864706, 1)
+
+[sub_resource type="Sky" id="Sky_2h50b"]
+sky_material = SubResource("ProceduralSkyMaterial_hylcm")
+
+[sub_resource type="Environment" id="Environment_gw4mh"]
+background_mode = 2
+sky = SubResource("Sky_2h50b")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hy6t8"]
 
@@ -29,6 +44,9 @@ bg_color = Color(0, 0.470588, 0.0627451, 1)
 
 [node name="Room" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gw4mh")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -2.19548, 0)
 mesh = SubResource("PlaneMesh_hy6t8")
@@ -39,6 +57,7 @@ light_color = Color(1, 0.564706, 0.388235, 1)
 light_energy = 0.5
 light_indirect_energy = 0.5
 light_angular_distance = 1.0
+sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.780147, 0, -0.625597, 0, 1, 0, 0.625597, 0, -0.780147, -9.5, 1.231, -9.5)
@@ -46,6 +65,7 @@ light_color = Color(1, 0.564706, 0.388235, 1)
 light_energy = 0.5
 light_indirect_energy = 0.5
 light_angular_distance = 1.0
+sky_mode = 1
 
 [node name="Enemy" parent="." instance=ExtResource("1_on4ew")]
 transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 2.77064, 0.88428, -2.73333)
