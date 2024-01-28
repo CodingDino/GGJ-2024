@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://deu544fia0cwt"]
 
 [ext_resource type="Script" path="res://mainMenu.cs" id="1_4ww0e"]
+[ext_resource type="Theme" uid="uid://c1ved5m6j66t6" path="res://buttontheme.tres" id="2_750vl"]
 
 [sub_resource type="EventAsset" id="EventAsset_mjweg"]
 min_distance = 1.0
@@ -25,35 +26,47 @@ offset_right = 1923.0
 offset_bottom = 1086.0
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_left = 630.0
-offset_top = 291.0
-offset_right = 1268.0
-offset_bottom = 475.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = 232.0
+offset_right = -2.0
+offset_bottom = 416.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.6, 0.109804, 0.117647, 1)
 theme_override_font_sizes/font_size = 100
-text = "(S)LAUGHTER"
+text = "(S)Laughter"
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="StartBtn" type="Button" parent="."]
+layout_mode = 2
+offset_left = 320.0
+offset_top = 448.0
+offset_right = 576.0
+offset_bottom = 512.0
+theme = ExtResource("2_750vl")
+theme_override_colors/font_color = Color(0.6, 0.109804, 0.117647, 1)
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="ExitBtn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.5
-offset_top = -33.0
-offset_right = 92.5
-offset_bottom = 33.0
+offset_left = -640.0
+offset_top = 36.0
+offset_right = -384.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="StartBtn" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Start"
-
-[node name="ExitBtn" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("2_750vl")
+theme_override_colors/font_color = Color(0.6, 0.109804, 0.117647, 1)
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
@@ -64,3 +77,20 @@ event = SubResource("EventAsset_mjweg")
 
 [connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_StartGame"]
 [connection signal="pressed" from="VBoxContainer/ExitBtn" to="." method="_ApplicationQuit"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = 194.0
+offset_right = -81.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_750vl")
+
+[connection signal="pressed" from="StartBtn" to="." method="_StartGame"]
+[connection signal="pressed" from="ExitBtn" to="." method="_ApplicationQuit"]
