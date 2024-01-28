@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd6lgygj2kdyb"]
+
+[ext_resource type="Texture2D" uid="uid://cgq7phxnpqbex" path="res://Textures/Clowdsss-1.png" id="1_y0bdi"]
+[ext_resource type="Texture2D" uid="uid://d1vhrcrc3liyk" path="res://Textures/Clowdsss-2.png" id="2_4lkwf"]
+[ext_resource type="Texture2D" uid="uid://bn5wvpt0t2u2f" path="res://Textures/Clowdsss-3.png" id="3_kp5el"]
+[ext_resource type="Texture2D" uid="uid://b52gemdhffwat" path="res://Textures/Clowdsss-4.png" id="4_3lhy1"]
+[ext_resource type="Texture2D" uid="uid://dpejkewae1xr8" path="res://Textures/Clowdsss-5.png" id="5_1nymc"]
+[ext_resource type="Texture2D" uid="uid://cvhsiayuxv0ak" path="res://Textures/Clowdsss-6.png" id="6_j6mxc"]
+[ext_resource type="Texture2D" uid="uid://cp26b43e6p1cq" path="res://Textures/Loohoon.png" id="7_eyyrb"]
+
+[sub_resource type="Animation" id="Animation_1utsa"]
+resource_name = "cloudRotate"
+length = 100.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ucqqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljenp"]
+_data = {
+"RESET": SubResource("Animation_ucqqb"),
+"cloudRotate": SubResource("Animation_1utsa")
+}
+
+[node name="Cloud1" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.446, 7.09615, -81.9538)
+billboard = 1
+texture = ExtResource("1_y0bdi")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.653, -4.96858, -83.5202)
+billboard = 1
+texture = ExtResource("2_4lkwf")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.676, 7.59088, 16.8876)
+billboard = 1
+texture = ExtResource("3_kp5el")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.992, -9.79914, 43.2857)
+billboard = 1
+texture = ExtResource("4_3lhy1")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4662, 7.45287, -108.407)
+billboard = 1
+texture = ExtResource("5_1nymc")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.454, -3.31239, 63.5272)
+billboard = 1
+texture = ExtResource("6_j6mxc")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, 19.2951, 5.38263, 96.389)
+billboard = 1
+texture = ExtResource("1_y0bdi")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, 70.187, -3.4504, -116.82)
+billboard = 1
+texture = ExtResource("2_4lkwf")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, -89.8022, 4.41652, -128.544)
+billboard = 1
+texture = ExtResource("3_kp5el")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, -69.4627, -7.03882, 136.628)
+billboard = 1
+texture = ExtResource("4_3lhy1")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, 208.099, 4.69255, -53.4192)
+billboard = 1
+texture = ExtResource("5_1nymc")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(0.0808947, 0, -0.996723, 0, 1, 0, 0.996723, 0, 0.0808947, -110.191, -3.31239, -37.9455)
+billboard = 1
+texture = ExtResource("6_j6mxc")
+
+[node name="Loohoon1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.232, 0, 94.1278)
+billboard = 1
+texture = ExtResource("7_eyyrb")
+
+[node name="Loohoon2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.1918, 0, 73.4078)
+billboard = 1
+texture = ExtResource("7_eyyrb")
+
+[node name="Loohoon3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8319, 0, -91.1678)
+billboard = 1
+texture = ExtResource("7_eyyrb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ljenp")
+}
+autoplay = "cloudRotate"
