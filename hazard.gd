@@ -2,7 +2,7 @@ extends Area3D
 
 signal damage_dealt(target, damage)
 
-@export var damage = 1
+@export var damage = 1.0
 @export var targetGroup = "Player"
 @export var damageFreq = 0.5
 @export var autoDamage = true

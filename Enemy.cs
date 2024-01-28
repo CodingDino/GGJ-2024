@@ -9,6 +9,7 @@ public partial class Enemy : CharacterBody3D
 	Godot.CharacterBody3D player;
 	NavigationAgent3D navAgent;
 	const float speed = 2.420f;
+	const float idleSpeed = 0.0690f;
 	Godot.Vector3 velocity;
 	float followRange = 5f;
 	float attackRange = 1f;
@@ -29,6 +30,8 @@ public partial class Enemy : CharacterBody3D
 		navAgent.TargetPosition = player.GlobalTransform.Origin;
 		navAgent.TargetDesiredDistance = 1.0f;
 		Godot.Vector3 lookatTarget = new Godot.Vector3(player.GlobalPosition.X,GlobalPosition.Y,player.GlobalPosition.Z);
+		Godot.Vector3 nextNavPoint  = navAgent.GetNextPathPosition();
+		
 		//if(!animPlayer.IsPlaying() && animPlayer.CurrentAnimation != "idle"){
 			//animPlayer.Play("idle");
 		//}
@@ -42,7 +45,7 @@ public partial class Enemy : CharacterBody3D
 			//animPlayer.Play("run");
 			//}
 			
-			Godot.Vector3 nextNavPoint  = navAgent.GetNextPathPosition();
+			//Godot.Vector3 nextNavPoint  = navAgent.GetNextPathPosition();
 			velocity = (nextNavPoint - GlobalTransform.Origin).Normalized() * speed;
 			if(playerInRangeToAttack())
 			{
@@ -63,7 +66,7 @@ public partial class Enemy : CharacterBody3D
 		{
 			//Play idle animation
 			//Set audio streamer to 'idle' laugh
-			velocity = Godot.Vector3.Zero;
+			velocity = (nextNavPoint - GlobalTransform.Origin).Normalized() * idleSpeed;
 		}
 
 		

@@ -352,7 +352,7 @@ gunSound = ExtResource("3_opw07")
 footsteps = ExtResource("4_rk0wx")
 
 [node name="Health" parent="." groups=["Player"] instance=ExtResource("3_63gab")]
-health = 100
+health = 100.0
 death_anim_name = ""
 death_anim_node = ""
 remove_on_death = ""
@@ -402,5 +402,5 @@ transform = Transform3D(0.0999977, -1.70946e-06, -0.000673126, 0, 0.0999997, -0.
 texture = ExtResource("7_b3m15")
 
 [node name="PupilRight" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(-0.0999991, -3.89819e-07, -0.000423323, 0, -0.0999999, 9.20853e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
+transform = Transform3D(-0.0999991, -3.89819e-07, -0.000423323, 0, -0.0999999, 9.20854e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
 texture = ExtResource("7_b3m15")

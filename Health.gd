@@ -3,7 +3,7 @@ extends Node3D
 signal health_depleted
 signal health_changed
 
-@export var health = 10
+@export var health = 10.0
 @export var death_anim_name = "Death"
 @export var death_anim_node = "../AnimatedSprite2D"
 @export var remove_on_death = "../"

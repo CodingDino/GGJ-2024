@@ -46,7 +46,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.423072, 0)
 script = ExtResource("1_8gtg3")
 
 [node name="Health" parent="." groups=["Enemy"] instance=ExtResource("2_xxqgq")]
-health = 3
+health = 3.0
 death_anim_name = ""
 death_anim_node = ""
 deathSound = ExtResource("3_71puu")
@@ -70,12 +70,13 @@ script = SubResource("GDScript_vkdjr")
 
 [node name="GiggleDamage" parent="." instance=ExtResource("3_2kmpa")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+damage = 0.5
 damageFreq = 3.0
 damageSound = ExtResource("4_4tryg")
 
 [node name="LaughDamage" parent="." instance=ExtResource("3_2kmpa")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-damage = 10
+damage = 5.0
 damageFreq = 3.0
 damageSound = ExtResource("5_puaao")
 

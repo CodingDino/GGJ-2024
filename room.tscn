@@ -249,7 +249,6 @@ show_percentage = false
 script = ExtResource("7_brvu6")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true
 
 [node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
