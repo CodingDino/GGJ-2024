@@ -94,7 +94,7 @@ func shoot() :
 	
 	var bullet = bullet_scene.instantiate()
 	var bullet_spawn_location = $Camera3D/GunBillboard/BulletSpawn
-	bullet.global_position = bullet_spawn_location.global_position
+	bullet.position = bullet_spawn_location.global_position
 	var aim = $Camera3D.get_global_transform().basis
 	var forward = -aim.z
 	bullet.linear_velocity = forward * bullet_speed

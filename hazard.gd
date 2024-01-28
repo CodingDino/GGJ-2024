@@ -17,9 +17,9 @@ func deal_damage() :
 		if Time.get_ticks_usec() > lastDamaged[i] + damageFreq * 1000000:
 			if collidingWith[i] != null :
 				lastDamaged[i] = Time.get_ticks_usec()
+				FMODRuntime.play_one_shot_attached(damageSound, self)
 				damage_dealt.emit(collidingWith[i], damage)
 				collidingWith[i].take_damage(damage)
-				FMODRuntime.play_one_shot_attached(damageSound, self)
 
 
 func _physics_process(_delta):
