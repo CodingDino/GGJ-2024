@@ -7,7 +7,14 @@ extends CharacterBody3D
 @export var mouse_sensitivity = 0.002
 @export var bullet_scene: PackedScene
 @export var bullet_speed= 10.0
+@export var shoot_cooldown= 5.0
 @export var event: EventAsset
+@export var gunshot: EventAsset
+
+@onready var gunAnim = $Camera3D/GunBillboard/AnimationPlayer
+@onready var fireParticles = $Camera3D/GunBillboard/GPUParticles3D
+var timeSinceShot = 0.0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -31,6 +38,9 @@ func _input(event):
 		shoot()
 
 func _physics_process(delta):
+	# Track time since last shot
+	timeSinceShot += delta
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -59,31 +69,22 @@ func _physics_process(delta):
 	move_and_slide()
 
 func shoot() :
+	
+	if timeSinceShot < shoot_cooldown :
+		# TODO: SFX for failed fire?
+		return # exit early
+	
 	var bullet = bullet_scene.instantiate()
-	# We store the reference to the SpawnLocation node.
 	var bullet_spawn_location = $Camera3D/GunBillboard/BulletSpawn
 	bullet.global_position = bullet_spawn_location.global_position
 	var aim = $Camera3D.get_global_transform().basis
 	var forward = -aim.z
-	
-	# check ray cast point
-	
-	#var space_state = get_world_3d().direct_space_state
-	#var cam = $Camera3D
-	#var mousepos = get_viewport().get_mouse_position()
-	#var origin = cam.project_ray_origin(mousepos)
-	#var end = origin + cam.project_ray_normal(mousepos) * 1000
-	#var query = PhysicsRayQueryParameters3D.create(cam.global_position, end)
-	#query.collide_with_areas = true
-
-	#var result = space_state.intersect_ray(query)
-
-	var bullet_dir = forward
-	#if result :
-	#	bullet_dir = result.position - bullet.global_position
-	#	bullet_dir = bullet_dir.normalized()
-	
-	bullet.linear_velocity = bullet_dir * bullet_speed
+	bullet.linear_velocity = forward * bullet_speed
 	get_tree().current_scene.add_child(bullet)
+	
+	# Animate gun
+	gunAnim.play("Fire")
+	fireParticles.emitting = true
+	timeSinceShot = 0
 	# add FMOD gun sound
-	FMODRuntime.play_one_shot_attached(event, self)
+	FMODRuntime.play_one_shot_attached(gunshot, self)

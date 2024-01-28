@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy72g2t3stfee"]
+[gd_scene load_steps=8 format=3 uid="uid://dy72g2t3stfee"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_s2ghe"]
 [ext_resource type="PackedScene" uid="uid://dvi1txvg6jdqr" path="res://explosion.tscn" id="2_qo6xj"]
+[ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_jn8ma"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oql55"]
 
@@ -21,6 +22,9 @@ contact_monitor = true
 script = ExtResource("1_s2ghe")
 explosion_scene = ExtResource("2_qo6xj")
 
+[node name="Hazard" parent="." instance=ExtResource("3_jn8ma")]
+targetGroup = "Enemy"
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_oql55")
@@ -36,3 +40,5 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_wr22m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="Hazard" method="_on_body_entered"]
+[connection signal="body_exited" from="." to="Hazard" method="_on_body_exited"]
