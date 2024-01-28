@@ -60,6 +60,11 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		if gunAnim.current_animation != "move" :
+			if gunAnim.current_animation == "Fire" :
+				gunAnim.queue("move")
+			else:
+				gunAnim.play("move")
 		if not walking:
 			walking = true
 			footstepsInstance.start()
@@ -70,6 +75,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		if gunAnim.current_animation != "idle" :
+			if gunAnim.current_animation == "Fire" :
+				gunAnim.queue("idle")
+			else:
+				gunAnim.play("idle")
 		if walking:
 			walking = false
 			footstepsInstance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
