@@ -7,6 +7,7 @@ signal health_changed
 @export var death_anim_name = "Death"
 @export var death_anim_node = "../AnimatedSprite2D"
 @export var remove_on_death = "../"
+@export var score_on_death = 100
 
 var anim = null
 var to_remove_on_death = null
@@ -43,6 +44,9 @@ func take_damage(damage):
 		health_depleted.emit()
 		
 		to_remove_on_death = get_node_or_null (remove_on_death)
+		if score_on_death > 0:
+			var score_display = get_tree().current_scene.get_node("CanvasLayer/Score")
+			score_display.add_score(score_on_death)
 		if death_anim_name != "":
 			anim = get_node(death_anim_node)
 			anim.play(death_anim_name)
