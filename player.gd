@@ -8,8 +8,7 @@ extends CharacterBody3D
 @export var bullet_scene: PackedScene
 @export var bullet_speed= 10.0
 @export var shoot_cooldown= 5.0
-@export var event: EventAsset
-@export var gunshot: EventAsset
+@export var gunSound: EventAsset
 
 @onready var gunAnim = $Camera3D/GunBillboard/AnimationPlayer
 @onready var fireParticles = $Camera3D/GunBillboard/GPUParticles3D
@@ -18,6 +17,7 @@ var timeSinceShot = 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var walking = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -55,9 +55,15 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		if not walking:
+			walking = true
+			# start footsteps
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		if walking:
+			walking = false
+			#stop footsteps
 	
 	move_and_slide()
 
@@ -80,4 +86,4 @@ func shoot() :
 	fireParticles.emitting = true
 	timeSinceShot = 0
 	# add FMOD gun sound
-	FMODRuntime.play_one_shot_attached(gunshot, self)
+	FMODRuntime.play_one_shot_attached(gunSound, self)

@@ -1,0 +1,10 @@
+[gd_resource type="EventAsset" format=3 uid="uid://inldmgon0sha"]
+
+[resource]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/EnemyHit"
+guid = "{0c5761bb-984a-4ff9-b507-057afec1a06e}"
+name = "EnemyHit"

@@ -6,6 +6,7 @@ signal damage_dealt(target, damage)
 @export var targetGroup = "Player"
 @export var damageFreq = 0.5
 @export var autoDamage = true
+@export var damageSound: EventAsset
 
 var collidingWith = []
 var lastDamaged = []
@@ -18,6 +19,7 @@ func deal_damage() :
 				lastDamaged[i] = Time.get_ticks_usec()
 				damage_dealt.emit(collidingWith[i], damage)
 				collidingWith[i].take_damage(damage)
+				FMODRuntime.play_one_shot_attached(damageSound, self)
 
 
 func _physics_process(_delta):

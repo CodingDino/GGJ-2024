@@ -9,6 +9,7 @@ signal health_changed
 @export var remove_on_death = "../"
 @export var score_on_death = 100
 @export var health_bar_node = "HealthBar3D"
+@export var deathSound: EventAsset
 
 
 var anim = null
@@ -52,6 +53,7 @@ func take_damage(damage):
 		
 	if health <= 0:
 		health = 0
+		FMODRuntime.play_one_shot_attached(deathSound, self)
 		health_depleted.emit()
 		
 		to_remove_on_death = get_node_or_null (remove_on_death)
