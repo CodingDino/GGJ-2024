@@ -1,17 +1,15 @@
-
-[gd_scene load_steps=23 format=3 uid="uid://c50ygvxkqa4ob"]
+[gd_scene load_steps=26 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
 [ext_resource type="PackedScene" uid="uid://dy72g2t3stfee" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
-[ext_resource type="PackedScene" path="res://health.tscn" id="3_63gab"]
+[ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
+[ext_resource type="EventAsset" uid="uid://cg7tawakcv8se" path="res://addons/FMOD/editor/resources/events/{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}.tres" id="3_opw07"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
-
+[ext_resource type="EventAsset" uid="uid://dhcywi15inmdp" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="4_rk0wx"]
 [ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="5_b8ef1"]
-
 [ext_resource type="Texture2D" uid="uid://du17lksq47qpj" path="res://Punderbuss eyes.png" id="6_ks2ci"]
 [ext_resource type="Texture2D" uid="uid://cbwwwn6o5rclk" path="res://PunderbussPupils.png" id="7_b3m15"]
-
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
@@ -28,7 +26,6 @@ billboard_keep_scale = true
 [sub_resource type="Animation" id="Animation_klqcm"]
 resource_name = "Fire"
 length = 0.7
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -180,6 +177,44 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_te3k4"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.3, -0.25, 0, 0.25, 0, -0.314819, -0.25, 0, 0.25, 0, -0.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PupilLeft:rotation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 0),
+"points": PackedFloat32Array(0.295503, -0.0772175, 0.117192, 0.0724539, -0.109963, 0.000193626, -0.133333, 0, 0.266667, 0, 0.590813, -0.266427, -0.00552968, 0.2, 0.00415099, 0.29709, -0.1, 0.111234, 0.1, -0.126942),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PupilRight:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 2),
+"points": PackedFloat32Array(-0.236143, -0.1, -0.0886315, 0.0962673, 0.0853231, 0, -0.133333, 0, 0.266667, 0, -0.472286, -0.266667, 0, 0.266667, 0, -0.236143, -0.1, -0.102096, 0.126576, 0.129229),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
+}
+
 [sub_resource type="Animation" id="Animation_bopcx"]
 resource_name = "move"
 length = 1.18
@@ -262,44 +297,6 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.5, 0.8, 1.1, 1.2)
 }
 
-[sub_resource type="Animation" id="Animation_te3k4"]
-resource_name = "idle"
-length = 1.6
-loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-0.3, -0.25, 0, 0.25, 0, -0.314819, -0.25, 0, 0.25, 0, -0.3, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8, 1.6)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PupilLeft:rotation:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 0),
-"points": PackedFloat32Array(0.295503, -0.0772175, 0.117192, 0.0724539, -0.109963, 0.000193626, -0.133333, 0, 0.266667, 0, 0.590813, -0.266427, -0.00552968, 0.2, 0.00415099, 0.29709, -0.1, 0.111234, 0.1, -0.126942),
-"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PupilRight:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 2),
-"points": PackedFloat32Array(-0.236143, -0.1, -0.0886315, 0.0962673, 0.0853231, 0, -0.133333, 0, 0.266667, 0, -0.472286, -0.266667, 0, 0.266667, 0, -0.236143, -0.1, -0.102096, 0.126576, 0.129229),
-"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_58gcx"]
 _data = {
 "Fire": SubResource("Animation_klqcm"),
@@ -349,11 +346,10 @@ material = SubResource("StandardMaterial3D_dvq3b")
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_gr5sa")
-speed = null
-jump_speed = null
-mouse_sensitivity = null
 bullet_scene = ExtResource("2_3tfrr")
-bullet_speed = null
+shoot_cooldown = 1.0
+gunSound = ExtResource("3_opw07")
+footsteps = ExtResource("4_rk0wx")
 
 [node name="Health" parent="." groups=["Player"] instance=ExtResource("3_63gab")]
 health = 100
@@ -402,9 +398,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -0.04)
 texture = ExtResource("6_ks2ci")
 
 [node name="PupilLeft" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(0.0999977, -1.70945e-06, -0.000673125, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
+transform = Transform3D(0.0999977, -1.70946e-06, -0.000673126, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
 texture = ExtResource("7_b3m15")
 
 [node name="PupilRight" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(-0.0999991, -3.89818e-07, -0.000423323, 0, -0.0999999, 9.20854e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
+transform = Transform3D(-0.0999991, -3.89819e-07, -0.000423323, 0, -0.0999999, 9.20853e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
 texture = ExtResource("7_b3m15")
