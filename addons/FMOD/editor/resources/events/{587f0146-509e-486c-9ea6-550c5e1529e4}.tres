@@ -1,0 +1,10 @@
+[gd_resource type="EventAsset" format=3 uid="uid://pogtg0ijnm8v"]
+
+[resource]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/LoohoonIdle"
+guid = "{587f0146-509e-486c-9ea6-550c5e1529e4}"
+name = "LoohoonIdle"

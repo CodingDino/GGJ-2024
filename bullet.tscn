@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_s2ghe"]
 [ext_resource type="PackedScene" uid="uid://dvi1txvg6jdqr" path="res://explosion.tscn" id="2_qo6xj"]
-[ext_resource type="PackedScene" path="res://hazard.tscn" id="3_jn8ma"]
+[ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_jn8ma"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oql55"]
 
