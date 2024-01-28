@@ -17,7 +17,7 @@ public partial class Enemy : CharacterBody3D
 
 	public override void _Ready() 
 	{
-		player = GetNode<Godot.CharacterBody3D>(playerPath); //../Player
+		player = GetNode<Godot.CharacterBody3D>("/root/Room/Player"); //../Player
 		navAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
 		animPlayer = GetNode<AnimationPlayer>("Chucklenug/AnimationPlayer");
 		animTree = GetNode<AnimationTree>("Chucklenug/AnimationTree");

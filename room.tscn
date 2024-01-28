@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=15 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=16 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_01nm6"]
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
@@ -64,9 +63,7 @@ light_angular_distance = 1.0
 sky_mode = 1
 
 [node name="Enemy" parent="." instance=ExtResource("1_on4ew")]
-
 transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 5.31859, 0.88428, -5.27692)
-
 playerPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_njkal")]
@@ -189,6 +186,7 @@ use_collision = true
 material = ExtResource("2_ck6f3")
 
 [node name="SpawnerParent" type="Node3D" parent="RoomGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.223554, 0)
 
 [node name="Spawner" type="Node3D" parent="RoomGeometry/SpawnerParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.26, 0)
