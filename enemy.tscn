@@ -73,8 +73,9 @@ damageFreq = 3.0
 damageSound = ExtResource("4_4tryg")
 
 [node name="LaughDamage" parent="." instance=ExtResource("3_2kmpa")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 damage = 10
-autoDamage = false
+damageFreq = 3.0
 damageSound = ExtResource("5_puaao")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxg4xp3ksgyqf"]
+[gd_scene load_steps=4 format=3 uid="uid://dxg4xp3ksgyqf"]
 
-[ext_resource type="Theme" uid="uid://c1ved5m6j66t6" path="res://buttontheme.tres" id="1_8mc1k"]
+[ext_resource type="Theme" uid="uid://bxejgikawkvda" path="res://buttontheme.tres" id="1_8mc1k"]
 [ext_resource type="Script" path="res://ExitButton.cs" id="2_1bb8x"]
+
+[sub_resource type="GDScript" id="GDScript_27c14"]
+script/source = "extends Label
+
+func _ready():
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	self.text = str(Global.score)
+	
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,9 +23,11 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_right = 2200.0
-offset_bottom = 1272.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -34,6 +46,7 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "SCORE: 9999999"
 horizontal_alignment = 1
+script = SubResource("GDScript_27c14")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1

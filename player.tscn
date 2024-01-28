@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c50ygvxkqa4ob"]
+[gd_scene load_steps=21 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
 [ext_resource type="PackedScene" uid="uid://dy72g2t3stfee" path="res://bullet.tscn" id="2_3tfrr"]
@@ -6,6 +6,7 @@
 [ext_resource type="EventAsset" uid="uid://cg7tawakcv8se" path="res://addons/FMOD/editor/resources/events/{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}.tres" id="3_4yoav"]
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
+[ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="5_b8ef1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
@@ -131,6 +132,8 @@ death_anim_name = ""
 death_anim_node = ""
 remove_on_death = ""
 health_bar_node = ""
+deathSound = ExtResource("5_b8ef1")
+sceneChangeOnDeath = "res://GameOver.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -138,7 +141,6 @@ shape = SubResource("CapsuleShape3D_youko")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-current = true
 
 [node name="GunBillboard" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.3, -0.5)

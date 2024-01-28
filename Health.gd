@@ -10,6 +10,7 @@ signal health_changed
 @export var score_on_death = 100
 @export var health_bar_node = "HealthBar3D"
 @export var deathSound: EventAsset
+@export var sceneChangeOnDeath = ""
 
 
 var anim = null
@@ -69,5 +70,7 @@ func take_damage(damage):
 				to_remove_on_death.queue_free()
 			else :
 				to_remove_on_death.queue_free()
+		if sceneChangeOnDeath != "":
+			get_tree().change_scene_to_file(sceneChangeOnDeath)
 				
 	health_changed.emit()
