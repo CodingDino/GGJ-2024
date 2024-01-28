@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=18 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_01nm6"]
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://HealthBar.gd" id="7_brvu6"]
 [ext_resource type="EventAsset" uid="uid://c5b4vnriln6bq" path="res://addons/FMOD/editor/resources/events/{521e109d-7a1a-4487-a580-d520009fb7e9}.tres" id="8_dua7d"]
 [ext_resource type="PackedScene" path="res://Clouds.tscn" id="10_bimwe"]
+[ext_resource type="PackedScene" uid="uid://boyiwwj1yq2a7" path="res://plant.tscn" id="11_sjn2y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hylcm"]
 sky_top_color = Color(0, 0.47451, 0.729412, 1)
@@ -257,5 +258,8 @@ event = ExtResource("8_dua7d")
 trigger_once = true
 
 [node name="Cloud1" parent="." instance=ExtResource("10_bimwe")]
+
+[node name="plant" parent="." instance=ExtResource("11_sjn2y")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -5.62645, 0.584185, 6.61714)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
