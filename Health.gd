@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 signal health_depleted
 signal health_changed
@@ -8,10 +8,13 @@ signal health_changed
 @export var death_anim_node = "../AnimatedSprite2D"
 @export var remove_on_death = "../"
 @export var score_on_death = 100
+@export var health_bar_node = "HealthBar3D"
+
 
 var anim = null
 var to_remove_on_death = null
 var max_health
+var bar = null
 
 func _ready():
 	max_health = health
@@ -32,6 +35,9 @@ func heal(amount):
 		health = max_health
 	if health_will_change:
 		health_changed.emit()
+	if health_bar_node != "":
+		bar = get_node(health_bar_node)
+		bar.update_health(health, max_health)
 	
 func take_damage(damage):
 	if health <= 0:
@@ -39,6 +45,11 @@ func take_damage(damage):
 		return
 		
 	health -= damage
+	
+	if health_bar_node != "":
+		bar = get_node(health_bar_node)
+		bar.update_health(health, max_health)
+		
 	if health <= 0:
 		health = 0
 		health_depleted.emit()
