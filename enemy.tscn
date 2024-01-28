@@ -1,13 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://1fje7miot30g"]
+[gd_scene load_steps=12 format=3 uid="uid://1fje7miot30g"]
 
 [ext_resource type="Script" path="res://Enemy.cs" id="1_8gtg3"]
 [ext_resource type="Texture2D" uid="uid://w4ob1d3mobhs" path="res://Hoohoon.png" id="2_o5slo"]
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="2_xxqgq"]
 [ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_2kmpa"]
-[ext_resource type="EventAsset" uid="uid://cfkcv5y3ye4us" path="res://addons/FMOD/editor/resources/events/{ba21a33b-abc1-4870-b356-6207f46924ee}.tres" id="3_71puu"]
-[ext_resource type="EventAsset" uid="uid://ckrl2blcgx7h1" path="res://addons/FMOD/editor/resources/events/{85b7d20f-20e2-45b8-8a54-06f6843cd7f1}.tres" id="4_4tryg"]
 [ext_resource type="PackedScene" uid="uid://bcyg66a8ktwfx" path="res://chucklenug.tscn" id="5_mqa8f"]
-[ext_resource type="EventAsset" uid="uid://dx8fe511vetmf" path="res://addons/FMOD/editor/resources/events/{550ec911-6faa-4725-b22c-451eb16f5c76}.tres" id="5_puaao"]
 
 [sub_resource type="GDScript" id="GDScript_ri0mq"]
 script/source = "extends Sprite3D
@@ -49,7 +46,6 @@ script = ExtResource("1_8gtg3")
 health = 3
 death_anim_name = ""
 death_anim_node = ""
-deathSound = ExtResource("3_71puu")
 
 [node name="HealthBar3D" type="Sprite3D" parent="Health"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
@@ -71,13 +67,11 @@ script = SubResource("GDScript_vkdjr")
 [node name="GiggleDamage" parent="." instance=ExtResource("3_2kmpa")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 damageFreq = 3.0
-damageSound = ExtResource("4_4tryg")
 
 [node name="LaughDamage" parent="." instance=ExtResource("3_2kmpa")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 damage = 10
 damageFreq = 3.0
-damageSound = ExtResource("5_puaao")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_6ff27")
