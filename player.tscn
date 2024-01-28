@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c50ygvxkqa4ob"]
+[gd_scene load_steps=22 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
 [ext_resource type="PackedScene" uid="uid://dy72g2t3stfee" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 [ext_resource type="EventAsset" uid="uid://cg7tawakcv8se" path="res://addons/FMOD/editor/resources/events/{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}.tres" id="3_4yoav"]
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
+[ext_resource type="EventAsset" uid="uid://dhcywi15inmdp" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="4_aj6t7"]
 [ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="4_lghpf"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
 
@@ -125,6 +126,7 @@ script = ExtResource("1_gr5sa")
 bullet_scene = ExtResource("2_3tfrr")
 shoot_cooldown = 1.0
 gunSound = ExtResource("3_4yoav")
+footsteps = ExtResource("4_aj6t7")
 
 [node name="Health" parent="." groups=["Player"] instance=ExtResource("3_63gab")]
 health = 100
