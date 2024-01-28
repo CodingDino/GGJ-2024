@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=9 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
 [ext_resource type="PackedScene" uid="uid://1fje7miot30g" path="res://enemy.tscn" id="1_on4ew"]
 [ext_resource type="Material" uid="uid://cmvgqjma38hti" path="res://WallMat.tres" id="2_ck6f3"]
 [ext_resource type="Material" uid="uid://dx6l8yif0h73" path="res://pillarMat.tres" id="3_kgftq"]
 [ext_resource type="PackedScene" uid="uid://c50ygvxkqa4ob" path="res://player.tscn" id="4_njkal"]
+[ext_resource type="Script" path="res://Score.gd" id="6_km5e4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hy6t8"]
 
@@ -172,6 +173,7 @@ offset_bottom = 152.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 70
 text = "9999999"
+script = ExtResource("6_km5e4")
 
 [node name="Score Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 1

@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://c50ygvxkqa4ob"]
+
+[gd_scene load_steps=16 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
 [ext_resource type="PackedScene" uid="uid://dy72g2t3stfee" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
+[ext_resource type="PackedScene" uid="uid://bngwuyi8mmfn" path="res://health.tscn" id="3_63gab"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
@@ -117,10 +119,16 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_3fvap"]
 material = SubResource("StandardMaterial3D_dvq3b")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_gr5sa")
 bullet_scene = ExtResource("2_3tfrr")
 shoot_cooldown = 1.0
+
+[node name="Health" parent="." groups=["Player"] instance=ExtResource("3_63gab")]
+health = 100
+death_anim_name = ""
+death_anim_node = ""
+remove_on_death = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

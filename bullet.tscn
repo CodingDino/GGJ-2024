@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_s2ghe"]
 [ext_resource type="PackedScene" uid="uid://dvi1txvg6jdqr" path="res://explosion.tscn" id="2_qo6xj"]
+[ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_vaj3h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oql55"]
 
@@ -12,14 +13,15 @@ albedo_color = Color(0.678431, 0.678431, 0.678431, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_40lc7"]
 material = SubResource("StandardMaterial3D_duo67")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_wr22m"]
-
 [node name="Bullet" type="RigidBody3D"]
 gravity_scale = 0.0
 max_contacts_reported = 3
 contact_monitor = true
 script = ExtResource("1_s2ghe")
 explosion_scene = ExtResource("2_qo6xj")
+
+[node name="Hazard" parent="." instance=ExtResource("3_vaj3h")]
+targetGroup = "Enemy"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -29,10 +31,6 @@ shape = SubResource("SphereShape3D_oql55")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_40lc7")
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_wr22m")
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="Hazard" method="_on_body_entered"]
+[connection signal="body_exited" from="." to="Hazard" method="_on_body_exited"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwpyxqb53n3sx"]
+
+[ext_resource type="Script" path="res://hazard.gd" id="1_y41ay"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_60hau"]
+
+[node name="Hazard" type="Area3D"]
+script = ExtResource("1_y41ay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_60hau")

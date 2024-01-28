@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1fje7miot30g"]
+[gd_scene load_steps=8 format=3 uid="uid://1fje7miot30g"]
 
 [ext_resource type="Script" path="res://Enemy.cs" id="1_8gtg3"]
 [ext_resource type="Texture2D" uid="uid://w4ob1d3mobhs" path="res://Hoohoon.png" id="2_o5slo"]
+[ext_resource type="PackedScene" uid="uid://bngwuyi8mmfn" path="res://health.tscn" id="2_xxqgq"]
+[ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_2kmpa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mdk6v"]
 
@@ -12,9 +14,22 @@ albedo_texture = ExtResource("2_o5slo")
 [sub_resource type="QuadMesh" id="QuadMesh_q0jsc"]
 material = SubResource("StandardMaterial3D_hsaif")
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423072, 0)
 script = ExtResource("1_8gtg3")
+
+[node name="Health" parent="." groups=["Enemy"] instance=ExtResource("2_xxqgq")]
+health = 3
+death_anim_name = ""
+death_anim_node = ""
+score_on_death = 100
+
+[node name="GiggleDamage" parent="." instance=ExtResource("3_2kmpa")]
+autoDamage = false
+
+[node name="LaughDamage" parent="." instance=ExtResource("3_2kmpa")]
+damage = 10
+autoDamage = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_mdk6v")
