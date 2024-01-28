@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://boyiwwj1yq2a7"]
+
+[ext_resource type="Texture2D" uid="uid://cq7vsxpme4yjy" path="res://Plant.png" id="1_pr3ju"]
+
+[node name="plant" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_pr3ju")

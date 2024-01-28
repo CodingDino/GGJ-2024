@@ -398,9 +398,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -0.04)
 texture = ExtResource("6_ks2ci")
 
 [node name="PupilLeft" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(0.0999977, -1.70946e-06, -0.000673126, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
+transform = Transform3D(0.0999977, -1.70945e-06, -0.000673126, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
 texture = ExtResource("7_b3m15")
 
 [node name="PupilRight" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(-0.0999991, -3.89819e-07, -0.000423323, 0, -0.0999999, 9.20854e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
+transform = Transform3D(-0.0999991, -3.89818e-07, -0.000423323, 0, -0.0999999, 9.20853e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
 texture = ExtResource("7_b3m15")
