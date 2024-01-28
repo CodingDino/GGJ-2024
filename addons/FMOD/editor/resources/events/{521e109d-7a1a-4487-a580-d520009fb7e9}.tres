@@ -1,0 +1,8 @@
+[gd_resource type="EventAsset" format=3 uid="uid://c5b4vnriln6bq"]
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicLoop"
+guid = "{521e109d-7a1a-4487-a580-d520009fb7e9}"
+name = "MusicLoop"

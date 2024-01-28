@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://30qn18ehp20b"]
+
+[resource]
+file_path = "res://addons/FMOD/soundbanks/Desktop/Master.strings.bank"
+modified_time = 1706441895
+path = "bank:/Master.strings"
+guid = "{768be97d-eda1-0264-2c84-602237e89386}"
+name = "Master.strings"

@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkefmcm88hlvr"]
+
+[ext_resource type="Theme" uid="uid://c1ved5m6j66t6" path="res://buttontheme.tres" id="1_evcpy"]
+[ext_resource type="Script" path="res://ExitButton.cs" id="2_vu1ag"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1936.0
+offset_bottom = 1096.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -92.0
+offset_right = 576.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "CONGRATULATIONS"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 640.0
+offset_right = 1088.0
+offset_bottom = 712.0
+theme = ExtResource("1_evcpy")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "EXIT"
+script = ExtResource("2_vu1ag")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

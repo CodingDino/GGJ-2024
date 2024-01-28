@@ -15,15 +15,41 @@ run/main_scene="res://mainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
+
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/mode=3
 
 [dotnet]
 
 project/assembly_name="GGJ24"
+
+[fmod]
+
+settings/banks_path="res://addons/FMOD/soundbanks/Desktop"
+settings/fmod_output_type=0
+settings/fmod_debug_flags=0
+settings/fmod_debug_mode=1
+settings/banks_to_load_at_startup=Array[String](["res://addons/FMOD/soundbanks/Desktop/Master.bank", "res://addons/FMOD/soundbanks/Desktop/Master.strings.bank"])
+settings/banks_preload_samples=false
+settings/banks_flags=0
+settings/sample_rate=48000
+settings/speaker_mode=3
+settings/dsp_buffer_length=512
+settings/dsp_buffer_count=4
+settings/real_channel_count=32
+settings/virtual_channel_count=128
+settings/enable_live_update=true
+settings/live_update_port=9264
+settings/enable_memory_tracking=false
+settings/encryption_key=""
+settings/distance_scale_2d=1.0
+settings/init_with_3d_righthanded=true
 
 [input]
 
@@ -62,6 +88,7 @@ down={
 }
 shoot={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(215, 15),"global_position":Vector2(219, 56),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(258, 27),"global_position":Vector2(266, 107),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
