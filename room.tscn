@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=12 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=13 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_01nm6"]
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]

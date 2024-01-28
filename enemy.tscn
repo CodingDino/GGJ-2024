@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Enemy.cs" id="1_8gtg3"]
 [ext_resource type="Texture2D" uid="uid://w4ob1d3mobhs" path="res://Hoohoon.png" id="2_o5slo"]
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="2_xxqgq"]
-[ext_resource type="PackedScene" path="res://hazard.tscn" id="3_2kmpa"]
+[ext_resource type="PackedScene" uid="uid://dwpyxqb53n3sx" path="res://hazard.tscn" id="3_2kmpa"]
 
 [sub_resource type="GDScript" id="GDScript_ri0mq"]
 script/source = "extends Sprite3D
