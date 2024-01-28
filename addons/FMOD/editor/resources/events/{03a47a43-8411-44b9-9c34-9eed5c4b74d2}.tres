@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://bhvvmwc3lje7h"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/UIGameStart"
+guid = "{03a47a43-8411-44b9-9c34-9eed5c4b74d2}"
+name = "UIGameStart"

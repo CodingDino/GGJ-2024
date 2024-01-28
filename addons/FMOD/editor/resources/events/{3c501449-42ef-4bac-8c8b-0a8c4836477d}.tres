@@ -4,6 +4,6 @@
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/Player_Death"
+path = "event:/PlayerDeath"
 guid = "{3c501449-42ef-4bac-8c8b-0a8c4836477d}"
-name = "Player_Death"
+name = "PlayerDeath"
