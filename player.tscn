@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
 [ext_resource type="EventAsset" uid="uid://cg7tawakcv8se" path="res://addons/FMOD/editor/resources/events/{c4b7b401-e776-4174-8f4e-a1a5ebf3fb21}.tres" id="3_opw07"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
-[ext_resource type="EventAsset" uid="uid://dhcywi15inmdp" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="4_rk0wx"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="4_rk0wx"]
 [ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="5_b8ef1"]
 [ext_resource type="Texture2D" uid="uid://du17lksq47qpj" path="res://Punderbuss eyes.png" id="6_ks2ci"]
 [ext_resource type="Texture2D" uid="uid://cbwwwn6o5rclk" path="res://PunderbussPupils.png" id="7_b3m15"]
@@ -398,9 +398,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -0.04)
 texture = ExtResource("6_ks2ci")
 
 [node name="PupilLeft" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(0.0999977, -1.70946e-06, -0.000673126, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
+transform = Transform3D(0.0999977, -1.70945e-06, -0.000673126, 0, 0.0999997, -0.000253957, 0.000673128, 0.000253951, 0.0999974, -0.279, 0.265, -0.02)
 texture = ExtResource("7_b3m15")
 
 [node name="PupilRight" type="Sprite3D" parent="Camera3D/GunBillboard"]
-transform = Transform3D(-0.0999991, -3.89819e-07, -0.000423323, 0, -0.0999999, 9.20853e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
+transform = Transform3D(-0.0999991, -3.89818e-07, -0.000423323, 0, -0.0999999, 9.20853e-05, 0.000423323, -9.20845e-05, -0.099999, 0.272074, 0.261107, -0.0202214)
 texture = ExtResource("7_b3m15")

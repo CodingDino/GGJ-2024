@@ -9,17 +9,17 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	
 	# TODO: hurt enemy
 	
 	# spawn explosion
 	var explosion = explosion_scene.instantiate()
-	explosion.global_position = self.global_position
+	explosion.position = self.global_position
 	explosion.emitting = true
 	get_tree().current_scene.add_child(explosion)
 	
