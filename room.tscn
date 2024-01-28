@@ -68,7 +68,7 @@ light_angular_distance = 1.0
 sky_mode = 1
 
 [node name="Enemy" parent="." instance=ExtResource("1_on4ew")]
-transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 2.77064, 0.88428, -2.73333)
+transform = Transform3D(-0.298722, 0, 0.400956, 0, 0.5, 0, -0.400956, 0, -0.298722, 5.31859, 0.88428, -5.27692)
 playerPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_njkal")]

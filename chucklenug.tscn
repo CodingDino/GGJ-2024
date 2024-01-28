@@ -1,55 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcyg66a8ktwfx"]
+[gd_scene load_steps=30 format=3 uid="uid://bcyg66a8ktwfx"]
 
 [ext_resource type="Texture2D" uid="uid://c4guvawp34bvv" path="res://EnemyParts/Chucklenug/ChucklenugMouth.png" id="1_jxehy"]
 [ext_resource type="Texture2D" uid="uid://7dhc24puhh0u" path="res://EnemyParts/Chucklenug/ChucklenugBody.png" id="2_lqcab"]
 [ext_resource type="Texture2D" uid="uid://bmmghpt8vjav2" path="res://EnemyParts/Chucklenug/ChucklenugEyes.png" id="3_dxsad"]
 [ext_resource type="Texture2D" uid="uid://dews4qlpumfbt" path="res://EnemyParts/Chucklenug/ChucklenugFootLeft.png" id="4_1o4j1"]
 [ext_resource type="Texture2D" uid="uid://dysdxmm6b1b7h" path="res://EnemyParts/Chucklenug/ChucklenugFootRight.png" id="5_ai4mv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeaqd"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("2_lqcab")
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_5dgsd"]
-material = SubResource("StandardMaterial3D_yeaqd")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3471"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("3_dxsad")
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_4akhp"]
-material = SubResource("StandardMaterial3D_b3471")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpbix"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("1_jxehy")
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_3356u"]
-material = SubResource("StandardMaterial3D_vpbix")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siqxo"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("4_1o4j1")
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_3oa6d"]
-material = SubResource("StandardMaterial3D_siqxo")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh3jc"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("5_ai4mv")
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_n6kyc"]
-material = SubResource("StandardMaterial3D_oh3jc")
 
 [sub_resource type="Animation" id="Animation_hki5a"]
 length = 0.001
@@ -399,92 +354,6 @@ tracks/30/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_xqpdc"]
-resource_name = "laughAttack"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mover/Body:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mover:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mover:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 0.8, 1), Vector3(1, 1.2, 1), Vector3(1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Mover/Body/Mouth:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.8, 2),
-"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 0.5, 1), Vector3(1, 1, 1), Vector3(1, 0.1, 1), Vector3(1, 1, 1), Vector3(1, 0.3, 1), Vector3(1, 1, 1), Vector3(1, 0.5, 1), Vector3(1, 1, 1), Vector3(1, 0.2, 1), Vector3(1, 1, 1)]
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Mover:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Mover:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0, 0.157057, 1.06252, -0.7, -0.0452733, 0.8, -0.0150909, 0, 0, 0.126875, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 2)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Mover:position:z")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
-}
-
 [sub_resource type="Animation" id="Animation_3mx8f"]
 resource_name = "idle"
 length = 1.17
@@ -787,6 +656,91 @@ tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.7, 0.9, 1.2)
 }
 
+[sub_resource type="Animation" id="Animation_xqpdc"]
+resource_name = "laughAttack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mover/Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mover:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0.8, 1), Vector3(1, 1.2, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mover/Body/Mouth:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.8, 2),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 0.5, 1), Vector3(1, 1, 1), Vector3(1, 0.1, 1), Vector3(1, 1, 1), Vector3(1, 0.3, 1), Vector3(1, 1, 1), Vector3(1, 0.5, 1), Vector3(1, 1, 1), Vector3(1, 0.2, 1), Vector3(1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mover:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mover:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0, 0.157057, 1.06252, -0.7, -0.0452733, 0.8, -0.0150909, 0, 0, 0.126875, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mover:position:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
 [sub_resource type="Animation" id="Animation_84jmi"]
 resource_name = "run"
 length = 0.75
@@ -1064,7 +1018,99 @@ _data = {
 "run": SubResource("Animation_84jmi")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gv0k3"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2lp4"]
+animation = &"laughAttack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gt6rl"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nhi6m"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n6f8b"]
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ngdo8"]
+advance_mode = 2
+advance_condition = &"atk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8bm17"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vlvym"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a2w62"]
+states/idle/node = SubResource("AnimationNodeAnimation_gv0k3")
+states/idle/position = Vector2(501, 119)
+states/laughAttack/node = SubResource("AnimationNodeAnimation_k2lp4")
+states/laughAttack/position = Vector2(690, 183)
+states/run/node = SubResource("AnimationNodeAnimation_gt6rl")
+states/run/position = Vector2(677, 51)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_nhi6m"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_n6f8b"), "run", "laughAttack", SubResource("AnimationNodeStateMachineTransition_ngdo8"), "laughAttack", "idle", SubResource("AnimationNodeStateMachineTransition_8bm17"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_vlvym")]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeaqd"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_lqcab")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_5dgsd"]
+material = SubResource("StandardMaterial3D_yeaqd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3471"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_dxsad")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_4akhp"]
+material = SubResource("StandardMaterial3D_b3471")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpbix"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_jxehy")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_3356u"]
+material = SubResource("StandardMaterial3D_vpbix")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siqxo"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_1o4j1")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_3oa6d"]
+material = SubResource("StandardMaterial3D_siqxo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh3jc"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_ai4mv")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_n6kyc"]
+material = SubResource("StandardMaterial3D_oh3jc")
+
 [node name="Chucklenug" type="Node3D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xnw42")
+}
+tree_root = SubResource("AnimationNodeStateMachine_a2w62")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/atk = false
+parameters/conditions/idle = false
+parameters/conditions/run = false
 
 [node name="Mover" type="MeshInstance3D" parent="."]
 
@@ -1097,3 +1143,4 @@ skeleton = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_xnw42")
 }
+next/run = &"idle"
