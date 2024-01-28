@@ -15,12 +15,12 @@ public partial class Enemy : CharacterBody3D
 	float followRange = 5f;
 	float attackRange = 1f;
 
-    public override void _Ready() 
-    {
-        player = GetNode<Godot.CharacterBody3D>("/root/Room/Player"); //../Player
-        navAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
-        
-    }
+	public override void _Ready() 
+	{
+		player = GetNode<Godot.CharacterBody3D>("/root/Room/Player"); //../Player
+		navAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+		
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

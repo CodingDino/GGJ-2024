@@ -13,14 +13,14 @@
 [ext_resource type="EventAsset" uid="uid://dx8fe511vetmf" path="res://addons/FMOD/editor/resources/events/{550ec911-6faa-4725-b22c-451eb16f5c76}.tres" id="9_xmodj"]
 [ext_resource type="EventAsset" uid="uid://cfkcv5y3ye4us" path="res://addons/FMOD/editor/resources/events/{ba21a33b-abc1-4870-b356-6207f46924ee}.tres" id="10_rbn4h"]
 [ext_resource type="EventAsset" uid="uid://ckrl2blcgx7h1" path="res://addons/FMOD/editor/resources/events/{85b7d20f-20e2-45b8-8a54-06f6843cd7f1}.tres" id="11_sh1rh"]
-[ext_resource type="EventAsset" uid="uid://inldmgon0sha" path="res://addons/FMOD/editor/resources/events/{0c5761bb-984a-4ff9-b507-057afec1a06e}.tres" id="12_fejrv"]
-[ext_resource type="EventAsset" uid="uid://dhcywi15inmdp" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="13_eui4d"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{0c5761bb-984a-4ff9-b507-057afec1a06e}.tres" id="12_fejrv"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{cb93afc1-5996-4f37-a19d-b946c4aaf58d}.tres" id="13_eui4d"]
 [ext_resource type="EventAsset" uid="uid://kd8sjjnkooi2" path="res://addons/FMOD/editor/resources/events/{92a39b75-6a5b-4479-beab-e815749e8bb5}.tres" id="13_nakwy"]
 [ext_resource type="EventAsset" uid="uid://bjrvvmw2otnd6" path="res://addons/FMOD/editor/resources/events/{eebe1380-4926-4b5f-b631-112204cc53da}.tres" id="14_ce6qd"]
 [ext_resource type="EventAsset" uid="uid://pogtg0ijnm8v" path="res://addons/FMOD/editor/resources/events/{587f0146-509e-486c-9ea6-550c5e1529e4}.tres" id="15_w83br"]
 [ext_resource type="EventAsset" uid="uid://dd4ya16v7p2yn" path="res://addons/FMOD/editor/resources/events/{3c501449-42ef-4bac-8c8b-0a8c4836477d}.tres" id="17_7u5rs"]
-[ext_resource type="EventAsset" uid="uid://bsmj4yn3jvemr" path="res://addons/FMOD/editor/resources/events/{0c488a1a-0724-45b6-b5bb-b9286901b268}.tres" id="20_sg8k5"]
-[ext_resource type="EventAsset" uid="uid://bhvvmwc3lje7h" path="res://addons/FMOD/editor/resources/events/{03a47a43-8411-44b9-9c34-9eed5c4b74d2}.tres" id="21_pr87m"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{0c488a1a-0724-45b6-b5bb-b9286901b268}.tres" id="20_sg8k5"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{03a47a43-8411-44b9-9c34-9eed5c4b74d2}.tres" id="21_pr87m"]
 
 [resource]
 banks = {
