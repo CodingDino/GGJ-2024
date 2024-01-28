@@ -79,4 +79,4 @@ func shoot() :
 	bullet.linear_velocity = bullet_dir * bullet_speed
 	get_tree().current_scene.add_child(bullet)
 	# add FMOD gun sound
-	FMODRuntime.play_one_shot(event, null)
+	FMODRuntime.play_one_shot_attached(event, self)
