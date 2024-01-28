@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var bullet_speed= 10.0
 @export var shoot_cooldown= 5.0
 @export var gunSound: EventAsset
+@export var footsteps: EventAsset
 
 @onready var gunAnim = $Camera3D/GunBillboard/AnimationPlayer
 @onready var fireParticles = $Camera3D/GunBillboard/GPUParticles3D
@@ -19,8 +20,12 @@ var timeSinceShot = 0.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var walking = false
 
+# Create footsteps instance
+var footstepsInstance: EventInstance
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	footstepsInstance = FMODRuntime.create_instance(footsteps)
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -57,13 +62,17 @@ func _physics_process(delta):
 		velocity.z = direction.z * speed
 		if not walking:
 			walking = true
-			# start footsteps
+			footstepsInstance.start()
+			# Guide says we're meant to release the instance after starting it
+			# to avoid memory leaks, but if we do that it doesn't restart after
+			# we stop walking and start walking again... should be fine?
+			#footstepsInstance.release()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 		if walking:
 			walking = false
-			#stop footsteps
+			footstepsInstance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
 	
 	move_and_slide()
 
