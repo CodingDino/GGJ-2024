@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bigdqlle5vppp"]
+[gd_scene load_steps=13 format=3 uid="uid://bigdqlle5vppp"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_01nm6"]
 [ext_resource type="Material" uid="uid://bog0misn2834v" path="res://testMaterial.tres" id="1_hwmi1"]
@@ -230,8 +230,9 @@ script = ExtResource("7_brvu6")
 wait_time = 3.0
 autostart = true
 
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
 play_event = 1
 event = ExtResource("8_dua7d")
 trigger_once = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
