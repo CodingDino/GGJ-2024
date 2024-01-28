@@ -1,11 +1,10 @@
-
-[gd_scene load_steps=16 format=3 uid="uid://c50ygvxkqa4ob"]
+[gd_scene load_steps=19 format=3 uid="uid://c50ygvxkqa4ob"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gr5sa"]
 [ext_resource type="PackedScene" uid="uid://dy72g2t3stfee" path="res://bullet.tscn" id="2_3tfrr"]
 [ext_resource type="Texture2D" uid="uid://b3jtmvwtbu0at" path="res://Punderbuss.png" id="2_qfwsh"]
+[ext_resource type="PackedScene" uid="uid://dwgfik0hbqmnj" path="res://health.tscn" id="3_63gab"]
 [ext_resource type="Texture2D" uid="uid://cldg4t3cp2j0f" path="res://smoke_07.png" id="4_mmmj6"]
-[ext_resource type="PackedScene" uid="uid://bngwuyi8mmfn" path="res://health.tscn" id="3_63gab"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_youko"]
 
